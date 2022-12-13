@@ -1,0 +1,22 @@
+﻿@using ShopOnline.Models
+@model List<Color>
+<link rel="stylesheet" href="style.css">
+    <span>Color:</span>
+    @foreach (var i in Model)
+    { 
+         <label class="sample" style="background : @i.nameColor ;">
+            <input type="radio"  name="nameColor" value="@i.nameColor" required>
+         </label>
+    }
+<script>
+    $('.sample').click(function () {
+        $(this).addClass('select')
+            .siblings().removeClass('select')
+    });
+</script>
+<style type="text/css">
+    .select {
+        border: blue 3px solid;
+    }
+    .sample {}
+</style>

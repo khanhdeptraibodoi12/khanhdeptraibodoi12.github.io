@@ -1,0 +1,11 @@
+﻿@using ShopOnline.Models
+@model List<Size>
+
+<span>Size:</span>
+@foreach (var i in Model)
+{
+    <label>
+        @i.nameSize
+        <input type="radio" name="id1" value="@i.nameSize" required>
+    </label>
+}

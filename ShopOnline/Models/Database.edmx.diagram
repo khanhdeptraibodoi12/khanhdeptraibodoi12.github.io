@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="20f083a11fd94f2786945bc571cfe5ef" Name="Diagram1">
+        <EntityTypeShape EntityType="menfashionModel.Article" Width="1.5" PointX="6" PointY="4.5" />
+        <EntityTypeShape EntityType="menfashionModel.Color" Width="1.5" PointX="3" PointY="1.375" />
+        <EntityTypeShape EntityType="menfashionModel.Contact" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="menfashionModel.Customer" Width="1.5" PointX="3.75" PointY="18.875" />
+        <EntityTypeShape EntityType="menfashionModel.Invoince" Width="1.5" PointX="6" PointY="18.5" />
+        <EntityTypeShape EntityType="menfashionModel.InvoinceDetail" Width="1.5" PointX="8.25" PointY="4.75" />
+        <EntityTypeShape EntityType="menfashionModel.Member" Width="1.5" PointX="3.75" PointY="8.875" />
+        <EntityTypeShape EntityType="menfashionModel.Product" Width="1.5" PointX="3" PointY="4" />
+        <EntityTypeShape EntityType="menfashionModel.ProductCategory" Width="1.5" PointX="0.75" PointY="5.125" />
+        <EntityTypeShape EntityType="menfashionModel.Role" Width="1.5" PointX="1.5" PointY="10.25" />
+        <EntityTypeShape EntityType="menfashionModel.Size" Width="1.5" PointX="3" PointY="15.75" />
+        <EntityTypeShape EntityType="menfashionModel.Slide" Width="1.5" PointX="5.75" PointY="8.75" />
+        <EntityTypeShape EntityType="menfashionModel.vDoanhThuTheoNgay" Width="1.5" PointX="7.75" PointY="8.75" />
+        <EntityTypeShape EntityType="menfashionModel.vHoaDonTrongNgay" Width="1.5" PointX="9.75" PointY="0.75" />
+        <AssociationConnector Association="menfashionModel.FK_POST_CATEGORY3" />
+        <AssociationConnector Association="menfashionModel.FK_POST_MEMBER3" />
+        <AssociationConnector Association="menfashionModel.FK_INVOINCE_CUSTOMER3" />
+        <AssociationConnector Association="menfashionModel.FK_INVOINCE_MEMBER3" />
+        <AssociationConnector Association="menfashionModel.FK_INVOINCEDETAIL_INVOINCE3" />
+        <AssociationConnector Association="menfashionModel.FK_INVOINCEDETAIL_PRODUCT2" />
+        <AssociationConnector Association="menfashionModel.FK_MEMBER_ROLE2" />
+        <AssociationConnector Association="menfashionModel.FK_PRODUCT_MEMBER2" />
+        <AssociationConnector Association="menfashionModel.FK_PRODUCT_CATEGORY2" />
+        <EntityTypeShape EntityType="menfashionModel.sysdiagram" Width="1.5" PointX="10.375" PointY="4.75" />
+        <EntityTypeShape EntityType="menfashionModel.Amount" Width="1.5" PointX="5.25" PointY="0.5" />
+        <AssociationConnector Association="menfashionModel.FK_Amount1_Color1" />
+        <AssociationConnector Association="menfashionModel.FK_Amount1_PRODUCT1" />
+        <AssociationConnector Association="menfashionModel.FK_Amount1_Size1" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
