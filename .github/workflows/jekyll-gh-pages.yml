@@ -1,0 +1,85 @@
+# Sample workflow for building and deploying a Jekyll site to GitHub Pages
+name: Deploy Jekyll with GitHub Pages dependencies preinstalled
+
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches: ["master"]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  # Build job
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Pages
+        uses: actions/configure-pages@v2
+      - name: Build with Jekyll
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+
+  # Deployment job
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
+      - name: oc-new-app
+  # You may pin to the exact commit or the version.
+  # uses: redhat-actions/oc-new-app@5b5b96825fd89024f99f6aa8631c88670e10e42b
+  uses: redhat-actions/oc-new-app@v1
+  with:
+    # Name to use for generated application artifacts
+    app_name: 
+    # "Environment variable key-value pairs to pass to the build container at the run time.
+Use the form env_name=env_value, and separate arguments with newlines."
+
+    build_env: # optional
+    # "Registry credentials file to use to create a pull secret.
+Set this to "docker" or "podman" depending on which tool you used to log in"
+
+    create_pull_secret_from: # optional
+    # "The name (reference) of the image to create deployment.
+It can be a container image or an image stream"
+
+    image: 
+    # "In the case of private images, provide the image pull secret if you have already created that.
+Otherwise, provide inputs create_pull_secret_from or registry_hostname, registry_username and registry_password"
+
+    image_pull_secret_name: # optional
+    # The OpenShift project/Kubernetes namespace to deploy to. Defaults to current context's.
+    namespace: # optional
+    # "A port to expose from the application container through a Service.
+If exactly one port is exposed in the container metadata, then this input can be omitted."
+
+    port: # optional
+    # The Hostname/domain of the container image registry such as quay.io, docker.io. to create pull secret
+    registry_hostname: # optional
+    # Registry username to use for the pull secret
+    registry_username: # optional
+    # Password, encrypted password, or access token of the provided registry to use for the pull secret
+    registry_password: # optional
